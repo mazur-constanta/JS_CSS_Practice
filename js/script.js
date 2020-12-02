@@ -171,6 +171,15 @@
 // git add main.css - дозакинуть новый файл
 // git status - уже закинуты 
 // git commit -a -m"First commit" - добавить -m message
+// git add -A
+// git commit -a -m"Second commit"
+// git log - когда и кем были внесены коммиты
+
+// git remote add origin https://github.com/constancegerman/JS_projects.git
+// git push -u origin master
+
+
+
 
 
 
