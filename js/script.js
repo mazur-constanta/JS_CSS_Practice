@@ -285,7 +285,45 @@ switch (num) {
 };
 */
 
+// УРОК 14. Циклы
+/*
+let num = 50;
 
+while (num <= 55) {
+    console.log(num);
+    num++;
+};                          // 50 51 52 53 54 55 
+
+do {
+    console.log(num);
+    num++;
+} while (num < 55);        // 50 51 52 53 54
+
+for (let i = 1; i < 8; i++) {
+    console.log(num);
+    num++;
+}                          //50 51 52 53 54 55 56
+
+пример вечного цикла
+for (let i = 1; i < 0; i++) {
+    console.log(num);
+    num++;
+}
+
+for (let i = 1; i < 10; i++) {
+    if (i === 6) {
+        break;
+    }
+    console.log(i);
+}                           // 1 2 3 4 5 
+
+for (let i = 1; i < 10; i++) {
+    if (i === 6) {
+        continue;
+    }
+    console.log(i);
+}                           // 1 2 3 4 5 7 8 9 - 6ка пропущена, и цикл продолжает дальше работу
+*/
 
 
 
