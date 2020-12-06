@@ -243,6 +243,48 @@ personalMovieDB.movies[c] = d;
 console.log(personalMovieDB);
 */
 
+// УРОК 13. Условия
+/*
+if (4 == 9) {
+    console.log('OK!');
+} else {
+    console.log('Error!');
+};
+
+const num = 50;
+
+if (num < 49) {
+    console.log('Error!');
+} else if (num > 100) {
+    console.log('Too big value!');
+} else {
+    console.log('Ok!');
+};
+
+(num === 50) ? console.log('Ok!') : console.log('Error!');  // тернарная операция
+4 + 4;   // бинарная
++ '4';   // унарная
+
+// Конструкция switch
+
+const num = 50;
+
+switch (num) {
+    case 49:
+        console.log('Bad.');
+        break;
+    case 100:
+        console.log('Too bad.');
+        break;
+    case 50:
+        console.log('Good.');
+        break;
+    default:
+        console.log('Not now!');
+        break;
+};
+*/
+
 
 
 
