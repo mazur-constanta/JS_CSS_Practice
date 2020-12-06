@@ -180,7 +180,8 @@
 
 // УРОК 11. Работа с GitHub с разн.компов. Gitignore, Git Kraken
 // git clone https://github.com/constancegerman/JS_projects.git JS_projects2 (задаём путь, для клонирования инфы с сайта на раб.комп и имя новой папки)
-
+// git push (залить на удалённый реп - сайт)
+// git pull (залить на локальный репатизаторий - комп дом.)
 
 
 
