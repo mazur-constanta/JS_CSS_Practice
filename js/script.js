@@ -392,3 +392,97 @@ console.log(personalMovieDB);
         }
     };
 */
+
+// УРОК 16. Стрелочные функции (ES6)
+
+/*
+function showFirstMessage() {
+    console.log('Hello!');
+}
+
+showFirstMessage();
+
+// Анонимные функции бывают, сразу пишутся и сразу используются. В будущем их нельзя использовать.
+
+// Функции с аргументами 
+function showFirstMessage(text,) {         // могут быть мн-во аругентов 
+    console.log(text);
+}
+
+showFirstMessage('Hello!');
+
+//
+function showFirstMessage(text) {        
+    console.log(text);
+    let num = 20;
+}
+
+showFirstMessage('Hello!');     // Hello!
+console.log(num);               // Error! Локальная переменная, она не видна, т.к. находится внутри функции.
+
+//
+let num = 20;
+
+function showFirstMessage(text) {        
+    console.log(text);
+    num = 10;
+}
+
+showFirstMessage('Hello!');     // Hello!
+console.log(num);               // 10, т.к. внутри она изменена 
+
+//
+let num = 20;
+
+function showFirstMessage(text) {        
+    console.log(text);
+    let num = 10;
+}
+
+showFirstMessage('Hello!');     // Hello!
+console.log(num);               // 20, т.к. при вызове обращается к глобальной переменной 
+
+// Замыкание функции - сама функция вместе со всеми внешними переменными, доступными ей
+
+function calc(a, b) {
+    return a + b;
+}
+
+console.log(calc(4, 3));
+console.log(calc(5, 6));
+console.log(calc(10, 6));
+
+// После return - ничего не задаём, прерывает функцию
+
+function ret() {
+    let num = 50;
+    return num;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
+
+// Классификация функций
+
+Function Declaration.   // существует ещё до того, как наш код запустится, так же, как переменная varю Вызывать можно раньше, чем он создана. 
+function foo() { 
+    // код  
+}
+
+Function Expression.   // создаётся только тогда, когда до неё доходит код
+let foo = function() { 
+    // код  
+};
+
+const logger = function() {
+    console.log("Hello!")
+};
+
+logger();
+
+Стрелочная функция. // не имеет контекста вызова this, чаще используется в обработчиках событий.
+() =>
+
+const Calc = (a, b) => a + b;
+*/
+
