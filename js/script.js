@@ -486,3 +486,25 @@ logger();
 const Calc = (a, b) => a + b;
 */
 
+// УРОК 17. Методы и свойства строк и чисел
+
+const str = 'test';
+console.log(str.length);
+console.log(str);
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+
+const arr = [1, 2, 3];
+console.log(arr.length);
+
+//console.log(str[2]);
+
+const fruit = 'Some fruit';
+// поиск подстроки
+console.log(fruit.indexOf('fruit'));
+
+const logg = 'Hi, you!';
+
+console.log(logg.slice(4, 7));      // в аргументе end - значение не включается 
+console.log(logg.slice(4));
+console.log(logg.slice(-2, -5));
