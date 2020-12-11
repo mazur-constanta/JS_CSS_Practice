@@ -503,8 +503,22 @@ const fruit = 'Some fruit';
 // поиск подстроки
 console.log(fruit.indexOf('fruit'));
 
-const logg = 'Hi, you!';
+const logg = 'Hi, friend!';
 
 console.log(logg.slice(4, 7));      // в аргументе end - значение не включается 
 console.log(logg.slice(4));
 console.log(logg.slice(-2, -5));
+// substring - до какого символа вырезать
+console.log(logg.substring(6, 11))
+// 2 аргумент - сколько символов вырезать
+console.log(logg.substr(6, 1))
+
+// Работа с числами, библиотека Math 
+const num = 12.2;
+console.log(Math.round(num));
+
+const test = '12.2px';
+console.log(parseInt(test));        // 12 - целое и преобразование сразу в числовой тип данных
+
+const test = '12.2px';
+console.log(parseFloat(test));        // 12.2 - вещественное и преобразование сразу в числовой тип данных
