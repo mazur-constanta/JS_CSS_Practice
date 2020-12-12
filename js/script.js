@@ -536,7 +536,7 @@ false - выводит в консоль главный объект прогр�
 "Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
 genres
 
-P.S. Функции вызывать не обязательно*/
+P.S. Функции вызывать не обязательно
 // Код возьмите из предыдущего домашнего задания
 
 let numberOfFilms;
@@ -612,3 +612,143 @@ function writeYourGenres() {
 };
 
 writeYourGenres();
+*/
+
+// УРОК 19. Callback - функции
+/*
+function first() {
+    // Do something
+    setTimeout(function() {
+        console.log(1);
+    }, 500);
+}
+
+function second() {
+    console.log(2);
+}
+
+first();
+second();
+// в начале на вывод 2, а потом 1 (т.к. у первой задержка)
+
+// Callback - функция, кот-ая должна быть выполнена после того, как другая завершит выполнение 
+
+function learnJS(lang, callback) {
+    console.log(`I learn: ${lang}`);
+    callback();
+}
+
+function done() {
+    console.log('I did it.');
+}
+
+learnJS('JavaScript', done);
+*/
+
+// УРОК 20. Объекты, деструктиризация объектов ES6
+// Объекты в JS - это подобие ассоциативных массивов
+/*
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    },
+    makeTest: function() {
+        console.log('Test');
+    }
+}
+
+// Деструктуризация объекта 
+const {border, bg} = options.colors;
+console.log(border);                               // 'black' 
+
+options.makeTest();                                // 'Test'
+console.log(Object.keys(options));                 // [ 'name', 'width', 'height', 'colors' ]
+console.log(Object.keys(options).length);          // 4
+
+console.log(options['colors']['border']);       // 'black' 
+
+console.log(options.name);      // 'test'
+
+delete options.name;            // name: 'test'
+console.log(options);           // выводит без name
+
+// вывод - 4 строки Property name has a value test
+// Property width has a value 1024
+// Property height has a value 1024
+// Property colors has a value [object Object]
+
+let counter = 0;
+
+for (let key in options) {
+    if(typeof(options[key]) === 'object') {
+        for(let i in options[key]) {
+            console.log(`Property ${i} has a value ${options[key][i]}`);
+            //counter++;
+        }
+    } else {
+    console.log(`Property ${key} has a value ${options[key]}`);
+    counter++;
+    }
+}
+
+console.log(counter);
+// Есть и for of - но не работает с объектами.
+*/
+
+// УРОК 21. Массивы и псевдомассивы
+/*
+const arr = [1, 2, 3, 6, 8];
+arr[99] = 0; // нарушение логики! Нельзя!
+arr.pop();                  // [ 1, 2, 3, 6 ]
+console.log(arr);
+
+arr.push(10);
+console.log(arr);             // [ 1, 2, 3, 6, 8, 10 ]
+
+// Методы shift и unshift - почти не исп, начало удаление и добавление, т.к. придётся менять индекс
+
+for(let i = 0; i < arr.length; i++) {   
+    console.log(arr[i]);
+}                                 // 1  2   3   6   8  
+
+for(let value of arr) {
+    console.log(value);
+}                                   // 1  2   3   6   8 
+
+console.log(arr.length);            // 5
+// Соотношение св-ва length и поряд.номеров. Length - последний индекс массива + 1
+// Массивы - для хранения элементов строго по порядку.
+
+const arr = [1, 2, 3, 6, 8];
+arr.sort(compareNum);
+console.log(arr);
+
+function compareNum(a, b) {
+    return a - b;
+}
+
+// Метод forEach, map, reduce, filter, join и т.д.
+// map позволяет модифицировать данные в отличие от forEach
+
+arr.forEach(function(item, i, arr) {
+    console.log(`${i}: ${item} внутри массива ${arr}`);
+});
+
+// 0: 1 внутри массива 1,2,3,6,8
+// 1: 2 внутри массива 1,2,3,6,8
+// 2: 3 внутри массива 1,2,3,6,8
+// 3: 6 внутри массива 1,2,3,6,8
+// 4: 8 внутри массива 1,2,3,6,8
+
+const str = prompt('', '');             // биби, ляля, куку, рере 
+const products = str.split(', ');       
+console.log(products);                  // 0: 'биби', 1: 'ляля', 2: 'куку',  4: 'рере'                      
+console.log(products.join('; '));       // биби; ляля; куку; рере   
+products.sort();                        // биби; куку; ляля; рере 
+// join - объединение элементов массива
+// Псевдомассивы - не имеют методов 
+*/
