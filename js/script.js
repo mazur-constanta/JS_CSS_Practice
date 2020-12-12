@@ -752,3 +752,107 @@ products.sort();                        // биби; куку; ляля; рер�
 // join - объединение элементов массива
 // Псевдомассивы - не имеют методов 
 */
+
+// УРОК 22. Передача по ссылке или значению. Поверхн.копия. Spread оператор (ES6-ES9)
+/*
+let a = 5,
+    b = a;
+
+b = b + 5;
+console.log(b);     // 10
+console.log(a);     // 5
+
+const obj = {
+    a: 5,
+    b: 1
+};
+
+const copy = obj;   // Ссылка на пред.структуру 
+
+copy.a = 10;
+console.log(copy);  // {a: 10, b: 1}
+console.log(obj);   // {a: 10, b: 1}
+// Передача данных объекта = по ссылке, это не работает. 
+
+// ВАР 1. Копирование объекта через цикл например
+function copy(mainObj) {
+    let objCopy = {};
+
+    let key;
+    for(key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+
+    return objCopy;  
+}
+
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
+
+const newNumbers = copy(numbers);   // Клонирование объекта 
+
+newNumbers.a = 10;
+newNumbers.c.x = 10;
+console.log(newNumbers);
+console.log(numbers);
+
+// ВАР 2. Объединение нескольких объектов - Object.assign
+const add = {
+    d: 17,
+    e: 20
+};
+
+console.log(Object.assign(numbers, add));   // { a: 2, b: 5, c: { x: 7, y: 4 }, d: 17, e: 20 }
+// Создана независимая поверхностная копия
+
+const clone = Object.assign({}, add);
+
+clone.d = 20;
+// console.log(add);       // { d: 17, e: 20 }
+// console.log(clone);     // { d: 20, e: 20 }
+
+// ВАР 3. Метод для создания копии массива - slice
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
+
+newArray[1] = 'asdasda';
+console.log(newArray);     // [ 'a', 'asdasda', 'c' ]
+console.log(oldArray);     // [ 'a', 'b', 'c' ]
+
+// ВАР 4. ES6 - для массива, ES8 - для объектов. SPREAD оператор - РАЗВОРОТА 
+// Разворачивает структуру и делаёт из неё обычн.набор данных
+// ...video - превращает в об.данные, через запятую
+
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress', 'livejournal', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'facebook'];
+
+console.log(internet);  // [ 'youtube', 'vimeo', 'rutube', 'wordpress', 'livejournal', 'blogger', 'vk', 'facebook' ]
+
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+const num = [2, 5, 7];  
+
+log(...num);            // 2    5    7
+
+const array = ['a', 'b'];
+
+const newArr = [...array];
+
+const q = {
+    one: 1,
+    two: 2
+};
+
+const newObj = {...q};
+*/
