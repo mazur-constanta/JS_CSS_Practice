@@ -1243,3 +1243,29 @@ console.log('Ёжик' > 'Яблоко');                 // false
 
 console.log(0 || "" || 2 || undefined || true || falsе);    // 2
 */
+
+// УРОК 28. Получение элементов со страницы
+
+const box = document.getElementById('box');
+console.log(box);       // <div class="box" id="box"></div>                          
+
+// const btns = document.getElementsByTagName('button');
+// console.log(btns);      // HTMLCollection(5) [button, button, button, button, button]
+
+const btns = document.getElementsByTagName('button')[1];    // <button>2</button> html - коллекция 
+// or
+console.log(btns[1]);   // <button>2</button> - только 1 элемент
+
+const circles = document.getElementsByClassName('circle');
+console.log(circles);
+
+// Новые методы для CSS
+const hearts = document.querySelectorAll('.heart');
+console.log(hearts);
+
+hearts.forEach(item => {
+    console.log(item);
+});
+
+const oneHeart = document.querySelector('.heart');
+console.log(oneHeart);
