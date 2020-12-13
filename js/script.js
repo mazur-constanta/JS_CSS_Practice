@@ -985,3 +985,261 @@ const personalMovieDB = {
 };
 */
 
+// УРОК 25. Отлавливаем ошибки в своем коде при пом. консполи разработчика 
+//Fn + F12 - панель разработчика
+//Вкладка sources - breakpoints (метка, для остановки кода в опред.участке)
+/*
+function hello(){
+    console.log('Hello World!');
+    //debugger;
+}
+
+hello();
+
+function hi() {
+    console.log('Say hi!');
+}
+
+hi();
+
+const arr = [1, 14, 4, 30, 54],
+      sorted = arr.sort(compareNum);
+
+function compareNum(a, b) {
+    return a - b;
+}
+
+console.log(sorted);
+*/
+
+// УРОК 26. Динамическая типизация JS
+/* Типы данных.
+Простые типы:
+    - Числа 1, 2, 3
+    - Строки 'string', 'name'
+    - Логический тип (boolean)
+    - true/false
+    - null
+    - undefined
+    - Symbol
+    - BigInt
+
+Объекты:
+    Специальные объекты:
+    - Массивы
+    - Функции function
+    - Объекты Даты
+    - Регулярные выражения
+    - Ошибки
+
+    Обычные объекты
+
+Функции:
+    Function Declaration  function foo() {
+        код
+    }
+    
+    Function Expression   let foo = function() {
+        код
+    } 
+
+    Стрелочные Функции () =>
+
+Переменные:
+    - var
+    - let
+    - const
+
+Условия:
+    if(условие) {
+        действие
+    } else {
+        действие
+    }
+
+    switch(условие) {
+        case'проверка':
+            действие;
+        break;
+        case'проверка':
+            действие;
+        break;
+        default:
+            действие;
+        break;
+    }    
+
+Циклы:
+    while(условие) {
+        код, тело цикла
+    }
+
+    do {
+        тело цикла
+    } while(уловие);
+
+    for(начало; условие; шаг) {
+        тело цикла;
+        действия
+    }
+
+Объекты:
+    let obj = new Object();
+
+    let obj = {};
+
+    Свойства объектов:
+    let obj = {
+        name: 'John';
+    }
+    obj.name = 'John';
+    
+    Методы объектов(действия, функции):
+    let obj = {
+        sayName: function() {
+            alert('John');
+        }
+    };
+
+Массивы:
+    let arr = ['1', {}, [], 25];
+    arr[0] == '1';
+    arr[2] == [];
+
+    Методы массивов:
+    - arr.push('a') - доб эл в конец массива
+    - arr.pop() - удал посл жлем из массива и возвращает его
+    - arr.shift() - удал из массива первый элем и возвр его
+    - arr.unshift('a') - доб элем в нач массива
+    - arr.split('a') - превр строку в массив, s - разделитель
+    - arr.join(s) - превр массив в строку, s - разделитель
+    - delete arr[1] - удал 2й элем 
+    - arr.splice(index, count, elem1 ...) - удал count элем, нач с index и заменить на элем elem1
+    - arr.slice(begin, end) - копирует часть массива с begin до end не включая
+    - arr.sort(fn) - сорт массива. Без передачи фун сравнения - сорт, как строки
+    - arr.reverse() - меняет порядок элементов на обратный
+    - arr.concat(item1...) - создаёт новый массив, в который копируются элем из arr и item1
+
+    Методы перебора:
+
+    arr.forEach
+    arr.map
+    arr.every/some
+    arr.filter
+    arr.reduce
+*/
+
+/*
+// ВАР 1. Превратить что-то в строку
+console.log(typeof(String(null)));  // string
+console.log(typeof(String(4)));     // string
+
+// ВАР 2.
+console.log(typeof(5 + ''));        // string
+
+const num = 5;
+console.log('https://vk.com/catalog/' + num);   // https://vk.com/catalog/5
+
+const fontSize = 26 + 'px';
+console.log(fontSize);                          // 26px
+
+// ВАР 1. Превратить что-то в число
+console.log(typeof(Number('4')));   // number
+
+// ВАР 2. Унарный + перед строкой 
+console.log(typeof(+'5'));          // number
+
+// ВАР 3. parseInt (метод)
+console.log(typeof(parseInt('15px', 10))); // number
+
+let answer = +prompt('How are you?', '');   // запрет на введение НЕ ЧИСЕЛ, также можно исп Регул. выражения
+// Вся инфа от пользователя - строки и их нужно преобразовывать по нужде
+
+// преобразование к boolean
+0, '', null, undefined, NaN;        // false
+// остальные данные - true
+
+// ВАР 1. Нативный, Логич.преобразования
+let switcher = null;                
+
+if(switcher) {
+    console.log('Working...');      // ничего не выведет, null = false 
+}
+
+
+switcher = 1;                       
+
+if(switcher) {
+    console.log('Working...');     // выведет Working... Т.к. 1 = true
+}
+
+// ВАР 2.
+console.log(typeof(Boolean('4'))); // boolean
+
+// ВАР 3. 
+console.log(typeof(!!'4'));        // boolean
+*/
+
+
+// УРОК 27. Задачи с собесов на основы
+/*
+•	Какое будет выведено значение: let x = 5; alert( x++ ); ?
+
+•	Чему равно такое выражение: [ ] + false - null + true ?
+
+•	Что выведет этот код: let y = 1; let x = y = 2; alert(x); ?
+
+•	Чему равна сумма [ ] + 1 + 2?
+
+•	Что выведет этот код: alert( "1"[0] )?
+
+•	Чему равно 2 && 1 && null && 0 && undefined ?
+
+•	Есть ли разница между выражениями? !!( a && b ) и (a && b)?
+
+•	Что выведет этот код: alert( null || 2 && 3 || 4 ); ?
+
+•	a = [1, 2, 3]; b = [1, 2, 3]; Правда ли что a == b ?
+
+•	Что выведет этот код: alert( +"Infinity" ); ?
+
+•	Верно ли сравнение: "Ёжик" > "яблоко"?
+
+•	Чему равно 0 || "" || 2 || undefined || true || falsе ?
+*/
+/*
+let x = 5;
+console.log(x++);     // 5
+
+let x = 5;
+console.log(++x);     // 6
+
+console.log(typeof([ ] + false - null + true));  // NaN
+
+let y = 1; 
+let x = y = 2; 
+console.log(x);     // 2
+
+console.log([ ] + 1 + 2);   // '12' - конкатенация
+
+console.log('1'[0]);        // 1 - т.к. 0 первый элем массива, соответственно его знач 1
+
+console.log(2 && 1 && null && 0 && undefined);  // null - запнётся на нём, т.к. 2 и 1 = правда, 1 и ничего = ложь null
+
+console.log(!!(1 && 2) === (1 && 2));           // false, т.к. !! - boolean операция, кот. != обычной логической И
+
+// && - запинается на ЛЖИ, || запинается на ПРАВДЕ
+
+                2     1     3                   // приоритеты выполнения
+console.log(null || 2 && 3 || 4);               // 3
+
+const a = [1, 2, 3]; 
+const b = [1, 2, 3]; 
+console.log(a == b);                            // false, т.к. это разные хранилища инфы, и неважно, что данные в них идентичны
+
+console.log(+'Infinity');                       // Infinity
+
+console.log('Ёжик' > 'Яблоко');                 // false 
+
+console.log(0 || "" || 2 || undefined || true || falsе);    // 2
+*/
