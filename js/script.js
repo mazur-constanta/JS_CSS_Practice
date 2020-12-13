@@ -1245,7 +1245,7 @@ console.log(0 || "" || 2 || undefined || true || falsе);    // 2
 */
 
 // УРОК 28. Получение элементов со страницы
-
+/*
 const box = document.getElementById('box');
 console.log(box);       // <div class="box" id="box"></div>                          
 
@@ -1267,5 +1267,87 @@ hearts.forEach(item => {
     console.log(item);
 });
 
+// querySelector - получаем первый подходящий элемент
 const oneHeart = document.querySelector('.heart');
 console.log(oneHeart);
+*/
+
+// УРОК 29. Действия с элементами на странице 
+/*
+const box = document.getElementById('box'),
+      btns = document.getElementsByTagName('button'),
+      circles = document.getElementsByClassName('circle'),
+      wrapper = document.querySelector('.wrapper'),
+      hearts = wrapper.querySelectorAll('.heart'),
+      oneHeart = wrapper.querySelector('.heart');
+
+box.style.backgroundColor = 'blue';
+box.style.width = '500px';
+
+box.style.cssText = `background-color: blue; width: 500px`;
+
+// Inline - стили - перебивают все остальные стили
+
+btns[1].style.borderRadius = '100%';
+circles[0].style.backgroundColor = 'red';
+
+for(let i = 0; i < hearts.length; i++) {
+    hearts[i].style.backgroundColor = 'green';
+}
+
+hearts.forEach(item => {
+    item.style.backgroundColor = 'green';
+});
+
+const div = document.createElement('div');  // оболочка - div
+const text = document.createTextNode('I was here.');
+
+// Действие с нашим классом
+div.classList.add('black');                 // класс - black
+
+// Современный метод append, старый - appendChild
+// append - вставляет в конец
+wrapper.append(div);
+document.body.append(div);
+
+
+// appendChild - старый формат добавления в конец 
+// wrapper.appendChild(div);
+
+// prepend - вставляет в начало какого-то родителя
+wrapper.prepend(div);
+
+//before, after - вставить перед или вставить после
+hearts[0].before(div);
+hearts[0].after(div);
+
+// Старый формат before, after - insertBefore 
+// wrapper.insertBefore(div, hearts[1]);
+
+// remove - удаление элементов со страницы 
+circles[0].remove();
+
+// Старый аналог метода remove - removeChild
+// wrapper.removeChild(hearts[1]);
+
+// replaceWith - заменить элемент другим 
+hearts[0].replaceWith(circles[0]);
+
+// Старый аналог метода replaceWith - replaceChild
+// wrapper.replaceChild(circles[0], hearts[0]);
+
+// Для записи HTML-структуры 
+div.innerHTML = '<h1>Hello World</h1>';
+
+// Для записи ТЕКСТА
+div.textContent = 'Hello';  // работает только с текстом 
+
+// div.textContent = '<h1>Hello World</h1>'; // лучше не использовать!
+
+// Метод insertAdjacentHTML - кусочек html-кода перед какими-то из тегов
+div.insertAdjacentHTML('beforebegin', '<h2>Hello</h2>');     // во wrapper - вставили перед элементом 
+div.insertAdjacentHTML('afterbegin', '<h2>Hello</h2>');      // вставили в начало элемента, аналог prepend
+div.insertAdjacentHTML('beforeend', '<h2>Hello</h2>');       // вставить в конец элемента
+div.insertAdjacentHTML('afterend', '<h2>Hello</h2>');        // вставить после элемента
+*/
+ 
