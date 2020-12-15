@@ -1350,4 +1350,6 @@ div.insertAdjacentHTML('afterbegin', '<h2>Hello</h2>');      // вставили
 div.insertAdjacentHTML('beforeend', '<h2>Hello</h2>');       // вставить в конец элемента
 div.insertAdjacentHTML('afterend', '<h2>Hello</h2>');        // вставить после элемента
 */
- 
+
+// УРОК 31. События и обработчики
+
