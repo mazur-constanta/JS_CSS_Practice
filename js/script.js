@@ -1352,4 +1352,66 @@ div.insertAdjacentHTML('afterend', '<h2>Hello</h2>');        // вставить
 */
 
 // УРОК 31. События и обработчики
+/*
+// Для исп. любого события - нужно назначить Обработчик События (функция, кот-ая срабатывает
+// как только какое-то событие произошло)
 
+// Используем свойства DOM-дерева для событий.
+const btns = document.querySelector('button'),
+      overlay = document.querySelector('.overlay');
+
+// Почти не используется! Устаревший метод! 
+// btn.onclick = function() {
+//     alert('Click');
+// };
+
+// Добавляем слушатель обработчика событий - addEventListener / removeEventListener 
+// btn.addEventListener('click', () => {
+//     alert('Click');
+// });
+
+// btn.addEventListener('mouseenter', () => {
+//     console.log('Hover');
+// });
+
+// (e - от event, 2ым можно указать аргумент текстовый) =>
+// btn.addEventListener('mouseenter', (e) => {
+//     console.log(e.target);
+//     e.target.remove();
+// });
+
+// btn.addEventListener('click', (e) => {
+//     e.target.remove();
+// });
+
+// Всплытие событий
+// let i = 0;
+const deleteElement = (e) => {
+    console.log(e.target);
+    console.log(e.type);                // событие, кот произошло - его тип
+    // e.target.remove();
+    // console.log(e.currentTarget);
+    // i++;
+    // if(i == 1) {
+    //     btn.removeEventListener('click', deleteElement);
+    // }
+};
+
+// btn.addEventListener('click', deleteElement);
+// overlay.addEventListener('click', deleteElement);
+
+// Всплытие событий - обработчик срабатывает в начале на влож.элементе, затем на родителе и выше по иерархии.
+
+btns.forEach(btn => {
+    btn.addEventListener('click', deleteElement, {once: true});
+});
+
+// Отмена выделения текста. Отмена обычного действия на обработчик 
+const link = document.querySelector('a');
+
+link.addEventListener('click', function(event) {
+    event.preventDefault(); 
+
+    console.log(event.target);
+});
+*/
