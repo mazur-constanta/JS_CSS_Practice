@@ -1415,3 +1415,31 @@ link.addEventListener('click', function(event) {
     console.log(event.target);
 });
 */
+
+// УРОК 32. Навигация по DOM - элементам, data-атрибуты, преимущества for/of
+// console.log(document.head);
+// console.log(document.documentElement);
+// console.log(document.body.childNodes);   // путешествуем по ДОМ-дереву
+// console.log(document.body.firstChild);
+// console.log(document.body.firstElementChild);
+// console.log(document.body.lastChild);
+// console.log(document.body.lastElementChild);
+
+
+// console.log(document.querySelector('#current').parentNode.parentNode);
+// console.log(document.querySelector('#current').parentNode.parentNode);  // аналог parentNode
+// console.log(document.querySelector('[data-current="3"]').nextElementSibling);  
+
+// console.log(document.querySelector('[data-current="3"]').nextSibling);  
+// дата-атрибуты, текстовые Ноды
+// nextSibling - простой перенос строки 
+
+
+// console.log(document.querySelector('[data-current="3"]').previousSibling); 
+
+for(let node of document.body.childNodes) {
+    if(node.nodeName == '#text') {
+        continue;
+    }
+    console.log(node);
+}
