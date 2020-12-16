@@ -1417,6 +1417,7 @@ link.addEventListener('click', function(event) {
 */
 
 // УРОК 32. Навигация по DOM - элементам, data-атрибуты, преимущества for/of
+/*
 // console.log(document.head);
 // console.log(document.documentElement);
 // console.log(document.body.childNodes);   // путешествуем по ДОМ-дереву
@@ -1443,3 +1444,46 @@ for(let node of document.body.childNodes) {
     }
     console.log(node);
 }
+*/
+
+// УРОК 33. Используем события на странице проекта - в другом репазитории
+
+// УРОК 34. События на мобильных устройствах
+/*
+// touchstart - при возникновении косания к элементу 
+// touchmove - от движения и смещения пальца
+// touchend - как только палец оторвался от элем
+// touchenter - когда наскальзываем на элемент какой-то из событий
+// touchleave - попал на элемент и продолжил скользить
+// touchcancel - серфить и палец выйдет за пределы браузера
+
+window.addEventListener('DOMContentLoaded', () => {
+    const box = document.querySelector('.box');
+
+    box.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+
+        console.log('Start');
+        //console.log(e.touches);
+        // console.log(e.targetTouches);
+        console.log(e.changedTouches);
+    });
+
+    box.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+
+        console.log(e.targetTouches[0].pageX);
+    });
+
+    box.addEventListener('touchend', (e) => {
+        e.preventDefault();
+
+        console.log('End');
+    });
+});
+
+// Свойства для работы с мобами
+// touches - выдаёт список всех пальцев и взаим.с экраном
+//  targetTouches - все пальцы, кот взаимодействуют с этим конкретным элем 
+//  changesTouches - список пальцев, кот участвуют в данном событии 
+*/
