@@ -1487,3 +1487,25 @@ window.addEventListener('DOMContentLoaded', () => {
 //  targetTouches - все пальцы, кот взаимодействуют с этим конкретным элем 
 //  changesTouches - список пальцев, кот участвуют в данном событии 
 */
+
+// УРОК 35. Async, defer, динамич. скрипты. КОНЕЦ 1го МОДУЛЯ.
+const p = document.querySelectorAll('p');
+console.log(p);
+
+// defer - атрибут должен обраб.скрипт в фон.режиме, а затем запустить, когда загрузится 
+// <script defer src="js/script.js"></script>
+// Такие скрипты дожидаются полной готовности нашей верстки
+
+// <script async src="js/script.js"></script>
+// Страница не ждёт асинхронности
+// Остальные скрипты не ждут async
+
+function loadScript(src) {
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = false;
+    document.body.append(script);
+}
+
+loadScript('js/script.js');
+loadScript('js/some.js');
